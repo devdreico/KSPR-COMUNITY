@@ -1,0 +1,37 @@
+{
+  "name": "kspr-cli-checkout",
+  "version": "2.0.0",
+  "private": true,
+  "description": "KSPR CLI — pasarela de compra y pago para licencias permanentes",
+  "type": "module",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "scripts": {
+    "dev": "concurrently \"vite\" \"node --watch server.js\"",
+    "dev:frontend": "vite",
+    "dev:backend": "node --watch server.js",
+    "build": "tsc -b && vite build",
+    "start": "node server.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "framer-motion": "^11.12.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.3"
+  }
+}
