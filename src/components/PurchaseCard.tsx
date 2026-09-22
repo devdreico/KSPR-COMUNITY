@@ -36,6 +36,7 @@ export default function PurchaseCard() {
     return new Intl.NumberFormat('es-CO', {
       style: 'currency',
       currency,
+      currencyDisplay: 'code',
       maximumFractionDigits: currency === 'COP' ? 0 : 2,
     }).format(price);
   };
@@ -56,14 +57,14 @@ export default function PurchaseCard() {
           {/* Price */}
           <div className="flex items-baseline gap-3 mb-4">
             <span className="text-4xl font-black tracking-tight">
-              {config ? formatPrice(config.price, config.currency) : '—'}
+              {config ? formatPrice(config.price, config.currency) : '21.000 COP'}
             </span>
             <span className="text-xs font-medium text-white/30">pago único</span>
           </div>
 
           {/* USD reference */}
           <div className="text-xs font-medium text-white/25 mb-5">
-            Equivalente a <span className="text-white/80 font-bold">$5.00 USD</span>
+            Equivalente a <span className="text-white/80 font-bold">$5 USD</span>
           </div>
 
           {/* Availability */}
