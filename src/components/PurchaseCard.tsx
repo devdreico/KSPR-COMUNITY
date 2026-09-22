@@ -32,15 +32,6 @@ export default function PurchaseCard() {
     await checkout(name.trim(), email.trim());
   };
 
-  const formatPrice = (price: number, currency: string) => {
-    return new Intl.NumberFormat('es-CO', {
-      style: 'currency',
-      currency,
-      currencyDisplay: 'code',
-      maximumFractionDigits: currency === 'COP' ? 0 : 2,
-    }).format(price);
-  };
-
   return (
     <section className="relative max-w-7xl mx-auto px-6 -mt-4 mb-20">
       <div className="flex justify-center">
@@ -57,7 +48,7 @@ export default function PurchaseCard() {
           {/* Price */}
           <div className="flex items-baseline gap-3 mb-4">
             <span className="text-4xl font-black tracking-tight">
-              {config ? formatPrice(config.price, config.currency) : '21.000 COP'}
+              21.00 COP
             </span>
             <span className="text-xs font-medium text-white/30">pago único</span>
           </div>
