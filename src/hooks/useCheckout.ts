@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { createCheckout } from '@/lib/api';
+import { getMercadoPagoUrl, submitCheckoutForm } from '@/lib/api';
 
 export function useCheckout() {
   const [loading, setLoading] = useState(false);
@@ -9,9 +9,8 @@ export function useCheckout() {
     setLoading(true);
     setError(null);
     try {
-      const result = await createCheckout({ name, email });
-      window.location.href = result.checkoutUrl;
-      return result;
+      await submitCheckoutForm({ name, email });
+      window.location.assign(getMercadoPagoUrl());
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Error al procesar el pago';
       setError(message);
