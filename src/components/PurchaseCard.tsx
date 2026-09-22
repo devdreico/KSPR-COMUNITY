@@ -19,7 +19,7 @@ export default function PurchaseCard() {
 
   const nameValid = name.trim().length >= 2;
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const canSubmit = nameValid && emailValid && config?.inventoryAvailable && !loading;
+  const canSubmit = nameValid && emailValid && !loading;
 
   const nameError = touched.name && !nameValid ? 'Escribe tu nombre y apellido' : '';
   const emailError = touched.email && !emailValid ? 'Escribe un correo electrónico válido' : '';
